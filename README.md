@@ -1,2 +1,5 @@
 # triangleApp
-triangle type checker
+## triangle type checker
+
+Deployed on Heroku*:
+[https://triangle-appl.herokuapp.com/](https://triangle-appl.herokuapp.com/)
