@@ -1,0 +1,2 @@
+# triangleApp
+triangle type checker
