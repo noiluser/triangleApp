@@ -28,6 +28,10 @@ app.controller('triController', function($scope, $q) {
     };
 
     //$scope.$watchGroup(['fside', 'sside', 'tside'], $scope.checkTriangle);
+    $scope.$watchGroup(['fside', 'sside', 'tside'], function() {
+        // $scope.checkTriangle;
+        scope.error = "";
+    });
 
     $scope.checkInputData = function(values) {
         var deferred = $q.defer();
