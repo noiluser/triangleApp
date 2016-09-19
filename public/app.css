@@ -1,0 +1,21 @@
+/* app css stylesheet */
+
+form {
+  margin-left: 20px;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+.error {
+  color: #FF0000;
+}
+
+.result {
+  color: #0000FF;
+}
+
+input.ng-invalid {
+  border-color: #FF0000;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="triApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AngularJS Triangle Checker</title>
+  <meta name="description" content="">`
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body ng-controller="triController">
+  <form name="checkForm">
+    <div>
+      <span>Please define triangle sides:</span>
+    </div>
+    <div>
+      <span>A:</span>
+      <input type="number" ng-model="fside" name="fside" required>
+      <span ng-show="checkForm.fside.$error.required" class="error">Field is required.</span>
+    </div>
+    <div>
+      <span>B:</span>
+      <input type="number" ng-model="sside" name="sside" required>
+      <span ng-show="checkForm.sside.$error.required" class="error">Field is required.</span>
+    </div>
+    <div>
+      <span>C:</span>
+      <input type="number" ng-model="tside" name="tside" required>
+      <span ng-show="checkForm.tside.$error.required" class="error">Field is required.</span>
+    </div>
+    <div>
+      <input type="button" ng-click="refreshCheck()" value="check the triangle type" ng-disabled="checkForm.fside.$error.required || checkForm.sside.$error.required || checkForm.tside.$error.required">
+    </div>
+    <div>
+      <span class="result" ng-bind="result"></span>
+    </div>
+    <div>
+      <span class="error" ng-bind="error"></span>
+    </div>
+  </form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
