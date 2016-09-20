@@ -5,6 +5,8 @@ module.exports = function(config) {
     basePath: './app',
 
     files: [
+      'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-mocks.js',
       '*.js'
     ],
 
