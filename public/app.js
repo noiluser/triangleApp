@@ -67,6 +67,8 @@ app.controller('triController', function($scope, $q) {
                 } else {
                     deferred.reject({type : "Parameters error", msg : "Triangle with sides=[" + values.join(",") + "] is not exists."});
                 }
+        } else {
+            deferred.reject({type : "Parameters error", msg : "Parameters error."});
         }
         return deferred.promise;
     }
@@ -89,6 +91,8 @@ app.controller('triController', function($scope, $q) {
                 deferred.reject({type : "Error", msg : "Error occured while the triangle type been verified."});
             }
 
+        } else {
+            deferred.reject({type : "Parameters error", msg : "Parameters error."});
         }
         return deferred.promise;
     }
