@@ -40,7 +40,7 @@ app.controller('triController', function($scope, $q) {
         } else {
             var output = [];
             values.forEach(function(item){
-               var num = parseFloat(item, 10);
+               var num = parseFloat(item);
                 if(!isNaN(num) && isFinite(item)) {
                     if (num > 0) {
                         if (output.length < 3)
@@ -71,7 +71,7 @@ app.controller('triController', function($scope, $q) {
             deferred.reject({type : "Parameters error", msg : "Parameters error."});
         }
         return deferred.promise;
-    }
+    };
 
     $scope.checkTriangleType = function(values) {
         var deferred = $q.defer();
@@ -81,11 +81,11 @@ app.controller('triController', function($scope, $q) {
             analyzer[values[1]] = 1;
             analyzer[values[2]] = 1;
             var type = Object.keys(analyzer).length;
-            if (type == 1) {
+            if (type === 1) {
                 deferred.resolve({type : "success", msg : "The triangle is equilateral."});
-            } else if (type == 2) {
+            } else if (type === 2) {
                 deferred.resolve({type : "success", msg : "The triangle is isosceles."});
-            } else if (type == 3) {
+            } else if (type === 3) {
                 deferred.resolve({type : "success", msg : "The triangle is scalene."});
             } else {
                 deferred.reject({type : "Error", msg : "Error occured while the triangle type been verified."});
@@ -95,21 +95,21 @@ app.controller('triController', function($scope, $q) {
             deferred.reject({type : "Parameters error", msg : "Parameters error."});
         }
         return deferred.promise;
-    }
+    };
 
     $scope.showTriangleType = function(data) {
         var deferred = $q.defer();
-        if (data.hasOwnProperty('type') && data.type == "success") {
+        if (data.hasOwnProperty('type') && data.type === "success") {
             $scope.result = data.msg;
         } else {
             data.type = "Error";
             deferred.reject(data);
         }
         return deferred.promise;
-    }
+    };
 
     $scope.showErrorMsg = function(data) {
         $scope.error = data.type + ". " + data.msg;
-    }
+    };
 });
 
